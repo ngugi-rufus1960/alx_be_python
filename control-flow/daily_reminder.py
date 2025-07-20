@@ -22,13 +22,16 @@ else:
 
 # Print the final reminder
 print(reminder)
+
 Enter your task: Finish project report
 Priority (high/medium/low): high
 Is it time-bound? (yes/no): yes
 
 Reminder: 'Finish project report' is a high priority task that requires immediate attention today!
+
 Enter your task: Read a book
 Priority (high/medium/low): low
 Is it time-bound? (yes/no): no
 
-Note: 'Read a book' is a low priority task.
+Note: 'Read a book' is a low priority task. Consider completing it when you have free time.
+
