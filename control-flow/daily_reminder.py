@@ -1,37 +1,36 @@
-# Prompt for user input
+# daily_reminder.py
+
+# Ask the user to enter the task description
 task = input("Enter your task: ")
+
+# Ask the user to specify the priority
 priority = input("Priority (high/medium/low): ").lower()
+
+# Ask if the task is time-bound
 time_bound = input("Is it time-bound? (yes/no): ").lower()
 
-# Match-case to handle task priority
+# Initialize the reminder message
+reminder = ""
+
+# Use match-case to handle different priority levels
 match priority:
     case "high":
-        reminder = f"Reminder: '{task}' is a high priority task"
+        if time_bound == "yes":
+            reminder = f"Reminder: '{task}' is a high priority task that requires immediate attention today!"
+        else:
+            reminder = f"Note: '{task}' is a high priority task. Try to address it soon."
     case "medium":
-        reminder = f"Note: '{task}' is a medium priority task"
+        if time_bound == "yes":
+            reminder = f"Reminder: '{task}' is a medium priority task that requires immediate attention today!"
+        else:
+            reminder = f"Note: '{task}' is a medium priority task. Plan accordingly."
     case "low":
-        reminder = f"Note: '{task}' is a low priority task"
+        if time_bound == "yes":
+            reminder = f"Reminder: '{task}' is a low priority task that requires immediate attention today!"
+        else:
+            reminder = f"Note: '{task}' is a low priority task. Consider completing it when you have free time."
     case _:
-        reminder = f"Note: '{task}' has an unrecognized priority level"
+        reminder = f"Note: '{task}' has an unknown priority level. Please review the input."
 
-# Append time sensitivity message
-if time_bound == "yes":
-    reminder += " that requires immediate attention today!"
-else:
-    reminder += "."
-
-# Print the final reminder
-print(reminder)
-
-Enter your task: Finish project report
-Priority (high/medium/low): high
-Is it time-bound? (yes/no): yes
-
-Reminder: 'Finish project report' is a high priority task that requires immediate attention today!
-
-Enter your task: Read a book
-Priority (high/medium/low): low
-Is it time-bound? (yes/no): no
-
-Note: 'Read a book' is a low priority task. Consider completing it when you have free time.
-
+# Display the reminder
+print("\n" + reminder)
