@@ -1,4 +1,4 @@
-gclass BankAccount:
+class BankAccount:
     def __init__(self, initial_balance=0):
         self.__account_balance = initial_balance  # Private attribute
 
@@ -14,4 +14,5 @@ gclass BankAccount:
 
     def display_balance(self):
         print(f"Current Balance: ${self.__account_balance}")
+
 
