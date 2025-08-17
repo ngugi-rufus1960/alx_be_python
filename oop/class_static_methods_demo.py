@@ -1,13 +1,20 @@
-from class_static_methods_demo import Calculator
+# oop/class_static_methods_demo.py
 
-def main():
-    # Using the static method
-    sum_result = Calculator.add(10, 5)
-    print(f"The sum is: {sum_result}")
+class Calculator:
+    """A simple Calculator class demonstrating static and class methods."""
 
-    # Using the class method
-    product_result = Calculator.multiply(10, 5)
-    print(f"The product is: {product_result}")
+    # Class attribute
+    calculation_type = "Arithmetic Operations"
 
-if __name__ == "__main__":
-    main()
+    @staticmethod
+    def add(a: float, b: float) -> float:
+        """Static method to return the sum of two numbers."""
+        return a + b
+
+    @classmethod
+    def multiply(cls, a: float, b: float) -> float:
+        """Class method to return the product of two numbers.
+        Prints the calculation type before performing the operation.
+        """
+        print(f"Calculation type: {cls.calculation_type}")
+        return a * b
